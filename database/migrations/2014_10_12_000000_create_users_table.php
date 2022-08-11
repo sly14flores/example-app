@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('profile_picture');
             $table->uuid('group_id')->nullable();
+            $table->tinyInteger('is_super_admin')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();

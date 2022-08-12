@@ -1,0 +1,540 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://api.example.local'
+paths:
+  /v1/contacts:
+    get:
+      summary: 'Contacts List'
+      description: ''
+      parameters:
+        -
+          in: query
+          name: page
+          description: ''
+          example: 10
+          required: false
+          schema:
+            type: integer
+            description: ''
+            example: 10
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Contacts
+      security: []
+  /v1/contact:
+    post:
+      summary: "Add New Contact\n\nbodyParam user_id string required\nbodyParam first_name string required\nbodyParam last_name string required\nbodyParam email string\nbodyParam cp_no string"
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Contacts
+      security: []
+  '/v1/contact/{id}':
+    get:
+      summary: 'Show Contact'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Contacts
+      security: []
+    put:
+      summary: "Update Contact Info\n\nqueryUrl id string required\nbodyParam user_id string required\nbodyParam first_name string required\nbodyParam last_name string required\nbodyParam email string\nbodyParam cp_no string"
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Contacts
+      security: []
+    delete:
+      summary: 'Delete Contact'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Contacts
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the contact.'
+        example: ipsam
+        required: true
+        schema:
+          type: string
+  /v1/groups:
+    get:
+      summary: 'Groups List'
+      description: ''
+      parameters:
+        -
+          in: query
+          name: page
+          description: ''
+          example: 6
+          required: false
+          schema:
+            type: integer
+            description: ''
+            example: 6
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Groups
+      security: []
+  '/v1/group/{id}':
+    delete:
+      summary: 'Delete group'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Groups
+      security: []
+    put:
+      summary: 'Update Group Info'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Groups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: porro
+                description:
+                  type: string
+                  description: ''
+                  example: illo
+              required:
+                - name
+      security: []
+    get:
+      summary: 'Show Group'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Groups
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the group.'
+        example: bfdb182a-2ed9-4bea-80fd-065bdd308f3a
+        required: true
+        schema:
+          type: string
+  /v1/group:
+    post:
+      summary: 'Add New Group'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Groups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: rem
+                description:
+                  type: string
+                  description: ''
+                  example: tempora
+              required:
+                - name
+      security: []
+  /v1/users:
+    get:
+      summary: 'Users List'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Users
+      security: []
+  '/v1/user/{id}':
+    put:
+      summary: 'Update User Info'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: ''
+                  example: quas
+                last_name:
+                  type: string
+                  description: ''
+                  example: nihil
+                email:
+                  type: string
+                  description: ''
+                  example: sed
+                password:
+                  type: string
+                  description: ''
+                  example: voluptatibus
+                profile_picture:
+                  type: string
+                  format: binary
+                  description: ''
+                group_id:
+                  type: string
+                  description: ''
+                  example: et
+                is_super_admin:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - first_name
+                - last_name
+                - email
+                - password
+                - group_id
+      security: []
+    get:
+      summary: 'Show User'
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: ''
+          example: dolorem
+          required: true
+          schema:
+            type: string
+            description: ''
+            example: dolorem
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Users
+      security: []
+    delete:
+      summary: 'Delete User'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Users
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83
+        required: true
+        schema:
+          type: string
+  /v1/user:
+    post:
+      summary: 'Add New User'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: ''
+                  example: provident
+                last_name:
+                  type: string
+                  description: ''
+                  example: et
+                email:
+                  type: string
+                  description: ''
+                  example: esse
+                password:
+                  type: string
+                  description: ''
+                  example: est
+                profile_picture:
+                  type: string
+                  format: binary
+                  description: ''
+                group_id:
+                  type: string
+                  description: ''
+                  example: est
+                is_super_admin:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - first_name
+                - last_name
+                - email
+                - password
+                - group_id
+      security: []
+tags:
+  -
+    name: Contacts
+    description: ''
+  -
+    name: Groups
+    description: ''
+  -
+    name: Users
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []

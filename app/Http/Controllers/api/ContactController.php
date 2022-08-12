@@ -8,69 +8,72 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
-use App\Models\Group;
-use App\Http\Resources\GroupResource;
-use App\Http\Resources\GroupResourceCollection;
+use App\Models\Contact;
+use App\Http\Resources\ContactResource;
+use App\Http\Resources\ContactResourceCollection;
 
 use App\Traits\Messages;
 
-class GroupController extends Controller
+class ContactController extends Controller
 {
-
     use Messages;
 
     /**
-     * @group Groups
+     * @group Contacts
      * 
-     * Groups List
+     * Contacts List
      * 
      * @queryParam page integer
      */
     public function index()
     {
-        $records = Group::latest()->paginate(10);
+        $records = Contact::latest()->paginate(10);
 
-        $data = new GroupResourceCollection($records);
-
+        $data = new ContactResourceCollection($records);
+        
         return $this->jsonSuccessResponse($data, 200);
     }
 
-    private function rules($isNew,$model=null)
-    {
-        $rules = [
-            'name' => 'required|string|unique:groups',
-            'description' => 'string|nullable',
-        ];
-
-        if (!$isNew) {
-            $rules['name'] = Rule::unique('groups')->ignore($model);
-        }
-
-        return $rules;
-    }
-
-    private function rulesMessages($isNew)
-    {
-        $messages = [
-            // 'name.required' => 'Group name is required',
-            // 'description.required' => 'Group description is required',
-        ];
-
-        return $messages;
-    }
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
     }
 
+    private function rules($isNew,$model=null)
+    {
+        $rules = [
+            'user_id' => 'string|required',
+            'first_name' => 'string|required',
+            'last_name' => 'string|required',
+            'email' => 'string|nullable',
+            'cp_no' => 'string|nullable',
+        ];
+    
+        return $rules;
+    }
+    
+    private function rulesMessages($isNew)
+    {
+        $messages = [];
+    
+        return $messages;
+    }
+
     /**
-     * @group Groups
+     * @group Contacts
      * 
-     * Add New Group
+     * Add New Contact
      * 
-     * @bodyParam name string required
-     * @bodyParam description string
+     * bodyParam user_id string required
+     * bodyParam first_name string required
+     * bodyParam last_name string required
+     * bodyParam email string
+     * bodyParam cp_no string
      */
     public function store(Request $request)
     {
@@ -82,30 +85,30 @@ class GroupController extends Controller
 
         $data = $validator->valid();
 
-        $record = new Group;
+        $record = new Contact;
         $record->fill($data);
         $record->save();
-
-        return $this->jsonSuccessResponse(null, 200, "Group succesfully added");
+        
+        return $this->jsonSuccessResponse(null, 200, "Contact succesfully added");
     }
 
     /**
-     * @group Groups
+     * @group Contacts
      * 
-     * Show Group
+     * Show Contact
      * 
-     * @queryUrl id string
+     * @queryUrl id string required
      */
     public function show($id)
     {
-        $record = Group::find($id);
+        $record = Contact::find($id);
 
         if (is_null($record)) {
-			return $this->jsonErrorResourceNotFound();
+            return $this->jsonErrorResourceNotFound();
         }
-
-		$data = new GroupResource($record);
-
+        
+        $data = new ContactResource($record);
+        
         return $this->jsonSuccessResponse($data, 200);
     }
 
@@ -121,53 +124,56 @@ class GroupController extends Controller
     }
 
     /**
-     * @group Groups
+     * @group Contacts
      * 
-     * Update Group Info
+     * Update Contact Info
      * 
-     * @queryUrl id string
-     * @bodyParam name string required
-     * @bodyParam description string
+     * queryUrl id string required
+     * bodyParam user_id string required
+     * bodyParam first_name string required
+     * bodyParam last_name string required
+     * bodyParam email string
+     * bodyParam cp_no string
      */
     public function update(Request $request, $id)
     {
-        $record = Group::find($id);
+        $record = Contact::find($id);
 
         if (is_null($record)) {
-			return $this->jsonErrorResourceNotFound();
+            return $this->jsonErrorResourceNotFound();
         }
-
+        
         $validator = Validator::make($request->all(), $this->rules(false,$record));
-
+        
         if ($validator->fails()) {
             return $this->jsonErrorDataValidation($validator->errors());
         }
-
+        
         $data = $validator->valid();
-
+        
         $record->fill($data);
         $record->save();
-
-        return $this->jsonSuccessResponse(null, 200, "Group info succesfully updated");
+        
+        return $this->jsonSuccessResponse(null, 200, "Contact info succesfully updated");
     }
 
     /**
-     * @group Groups
+     * @group Contacts
      * 
-     * Delete group
+     * Delete Contact
      * 
      * @queryUrl id string required
      */
     public function destroy($id)
     {
-        $record = Group::find($id);
+        $record = Contact::find($id);
 
         if (is_null($record)) {
-			return $this->jsonErrorResourceNotFound();
+            return $this->jsonErrorResourceNotFound();
         }
-
+        
         $record->delete();
-
+        
         return $this->jsonDeleteSuccessResponse();
     }
 }

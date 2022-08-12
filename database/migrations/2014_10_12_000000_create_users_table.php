@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('password');
-            $table->string('profile_picture');
+            $table->string('profile_picture')->nullable();;
             $table->uuid('group_id')->nullable();
             $table->tinyInteger('is_super_admin')->nullable();
             $table->timestamp('email_verified_at')->nullable();

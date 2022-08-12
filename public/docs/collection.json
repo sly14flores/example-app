@@ -1,0 +1,654 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/api.example.local"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "3a43c0e7-6253-422e-805e-36ec12fd3a72",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Contacts",
+            "description": "",
+            "item": [
+                {
+                    "name": "Contacts List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/contacts",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "10",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/v1\/contacts?page=10"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add New Contact\n\nbodyParam user_id string required\nbodyParam first_name string required\nbodyParam last_name string required\nbodyParam email string\nbodyParam cp_no string",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/contact",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/contact"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Contact",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/contact\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/contact\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "ipsam",
+                                    "description": "The ID of the contact."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Contact Info\n\nqueryUrl id string required\nbodyParam user_id string required\nbodyParam first_name string required\nbodyParam last_name string required\nbodyParam email string\nbodyParam cp_no string",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/contact\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/contact\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "voluptas",
+                                    "description": "The ID of the contact."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Contact",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/contact\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/contact\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "similique",
+                                    "description": "The ID of the contact."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Groups",
+            "description": "",
+            "item": [
+                {
+                    "name": "Groups List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/groups",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "6",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/v1\/groups?page=6"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete group",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/group\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/group\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "bfdb182a-2ed9-4bea-80fd-065bdd308f3a",
+                                    "description": "The ID of the group."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Group Info",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/group\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/group\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "bfdb182a-2ed9-4bea-80fd-065bdd308f3a",
+                                    "description": "The ID of the group."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"porro\",\"description\":\"illo\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show Group",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/group\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/group\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "bfdb182a-2ed9-4bea-80fd-065bdd308f3a",
+                                    "description": "The ID of the group."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add New Group",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/group",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/group"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"rem\",\"description\":\"tempora\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "description": "",
+            "item": [
+                {
+                    "name": "Users List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update User Info",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "first_name",
+                                    "value": "quas",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "last_name",
+                                    "value": "nihil",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "sed",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "voluptatibus",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "group_id",
+                                    "value": "et",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "is_super_admin",
+                                    "value": true,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "profile_picture",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "_method",
+                                    "value": "PUT",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Show User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/user\/:id",
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "dolorem",
+                                    "description": "",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/v1\/user\/:id?id=dolorem",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/user\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/user\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Add New User",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/user"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "first_name",
+                                    "value": "provident",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "last_name",
+                                    "value": "et",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "esse",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "est",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "group_id",
+                                    "value": "est",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "is_super_admin",
+                                    "value": false,
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "profile_picture",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer"
+    }
+}

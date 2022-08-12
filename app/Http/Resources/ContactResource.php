@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 use Carbon\Carbon;
 
-class GroupResource extends JsonResource
+class ContactResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,8 +19,10 @@ class GroupResource extends JsonResource
         // return parent::toArray($request);
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'description' => $this->description,
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'email' => $this->email,
+            'cp_no' => $this->cp_no,
             'created_at' => Carbon::parse($this->created_at)->format('F j, Y'),
         ];
     }

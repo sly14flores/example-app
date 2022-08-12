@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\api\GroupController;
+use App\Http\Controllers\api\ContactController;
+use App\Http\Controllers\api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,34 @@ Route::prefix('v1')->group(function() {
     ]);
     Route::apiResources([
         'group' => GroupController::class,
+    ],[
+        'except' => ['index']
+    ]);
+
+    /**
+    * Contacts
+    */
+    Route::apiResources([
+        'contacts' => ContactController::class,
+    ],[
+        'only' => ['index']
+    ]);
+    Route::apiResources([
+        'contact' => ContactController::class,
+    ],[
+        'except' => ['index']
+    ]);
+
+    /**
+    * Users
+    */
+    Route::apiResources([
+        'users' => UserController::class,
+    ],[
+        'only' => ['index']
+    ]);
+    Route::apiResources([
+        'user' => UserController::class,
     ],[
         'except' => ['index']
     ]);

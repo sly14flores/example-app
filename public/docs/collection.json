@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "f8358b9e-0ef4-4675-939d-72744515feea",
+        "_postman_id": "79ea619c-2b9b-416d-bb40-717675634868",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"assumenda\",\"password\":\"animi\"}"
+                            "raw": "{\"email\":\"sequi\",\"password\":\"qui\"}"
                         },
                         "description": "",
                         "auth": {
@@ -90,12 +90,12 @@
                             "query": [
                                 {
                                     "key": "page",
-                                    "value": "9",
+                                    "value": "2",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/v1\/contacts?page=9"
+                            "raw": "{{baseUrl}}\/v1\/contacts?page=2"
                         },
                         "method": "GET",
                         "header": [
@@ -150,7 +150,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "quae",
+                                    "value": "in",
                                     "description": "The ID of the contact."
                                 }
                             ]
@@ -183,7 +183,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aliquid",
+                                    "value": "laborum",
                                     "description": "The ID of the contact."
                                 }
                             ]
@@ -216,7 +216,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "molestiae",
+                                    "value": "assumenda",
                                     "description": "The ID of the contact."
                                 }
                             ]
@@ -252,12 +252,12 @@
                             "query": [
                                 {
                                     "key": "page",
-                                    "value": "20",
+                                    "value": "17",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/v1\/groups?page=20"
+                            "raw": "{{baseUrl}}\/v1\/groups?page=17"
                         },
                         "method": "GET",
                         "header": [
@@ -287,7 +287,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "bfdb182a-2ed9-4bea-80fd-065bdd308f3a",
+                                    "value": "id",
                                     "description": "The ID of the group."
                                 }
                             ]
@@ -320,7 +320,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "bfdb182a-2ed9-4bea-80fd-065bdd308f3a",
+                                    "value": "maiores",
                                     "description": "The ID of the group."
                                 }
                             ]
@@ -338,7 +338,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"voluptatem\",\"description\":\"et\"}"
+                            "raw": "{\"name\":\"officia\",\"description\":\"est\"}"
                         },
                         "description": ""
                     },
@@ -356,7 +356,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "bfdb182a-2ed9-4bea-80fd-065bdd308f3a",
+                                    "value": "corporis",
                                     "description": "The ID of the group."
                                 }
                             ]
@@ -399,7 +399,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"sed\",\"description\":\"qui\"}"
+                            "raw": "{\"name\":\"id\",\"description\":\"illo\"}"
                         },
                         "description": ""
                     },
@@ -448,7 +448,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "e15dc8ff-e0a9-423c-8088-4c6718b579f4",
+                                    "value": "3fb6b305-dc1c-46dd-8312-c4194d147ce5",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -469,37 +469,37 @@
                             "formdata": [
                                 {
                                     "key": "first_name",
-                                    "value": "dolore",
+                                    "value": "at",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "last_name",
-                                    "value": "voluptas",
+                                    "value": "in",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "email",
-                                    "value": "explicabo",
+                                    "value": "qui",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "password",
-                                    "value": "suscipit",
+                                    "value": "officiis",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "group_id",
-                                    "value": "omnis",
+                                    "value": "eligendi",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "is_super_admin",
-                                    "value": false,
+                                    "value": true,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -528,17 +528,17 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "animi",
+                                    "value": "cum",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/v1\/user\/:id?id=animi",
+                            "raw": "{{baseUrl}}\/v1\/user\/:id?id=cum",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "e15dc8ff-e0a9-423c-8088-4c6718b579f4",
+                                    "value": "3fb6b305-dc1c-46dd-8312-c4194d147ce5",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -571,7 +571,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "e15dc8ff-e0a9-423c-8088-4c6718b579f4",
+                                    "value": "3fb6b305-dc1c-46dd-8312-c4194d147ce5",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -617,37 +617,37 @@
                             "formdata": [
                                 {
                                     "key": "first_name",
-                                    "value": "deleniti",
+                                    "value": "dolor",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "last_name",
-                                    "value": "eum",
+                                    "value": "sapiente",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "email",
-                                    "value": "perferendis",
+                                    "value": "aut",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "password",
-                                    "value": "quis",
+                                    "value": "itaque",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "group_id",
-                                    "value": "qui",
+                                    "value": "explicabo",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "is_super_admin",
-                                    "value": true,
+                                    "value": false,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -658,7 +658,10 @@
                                 }
                             ]
                         },
-                        "description": ""
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
                     },
                     "response": []
                 }

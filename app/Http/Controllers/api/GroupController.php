@@ -19,6 +19,11 @@ class GroupController extends Controller
 
     use Messages;
 
+    public function __construct()
+    {
+        $this->middleware(['auth:api']);
+    }
+
     /**
      * @group Groups
      * 

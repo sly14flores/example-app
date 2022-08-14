@@ -19,6 +19,11 @@ class UserController extends Controller
 {
     use Messages;
 
+    public function __construct()
+    {
+        $this->middleware(['auth:api']);
+    }
+
     /**
      * @group Users
      * 
@@ -82,7 +87,7 @@ class UserController extends Controller
      * @bodyParam group_id string required
      * @bodyParam is_super_admin boolean
      * 
-     * @authenticated
+     * @unauthenticated
      */
     public function store(Request $request)
     {

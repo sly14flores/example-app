@@ -25,6 +25,8 @@ class GroupController extends Controller
      * Groups List
      * 
      * @queryParam page integer
+     * 
+     * @authenticated
      */
     public function index()
     {
@@ -71,6 +73,8 @@ class GroupController extends Controller
      * 
      * @bodyParam name string required
      * @bodyParam description string
+     * 
+     * @authenticated
      */
     public function store(Request $request)
     {
@@ -95,6 +99,8 @@ class GroupController extends Controller
      * Show Group
      * 
      * @queryUrl id string
+     * 
+     * @authenticated
      */
     public function show($id)
     {
@@ -128,6 +134,8 @@ class GroupController extends Controller
      * @queryUrl id string
      * @bodyParam name string required
      * @bodyParam description string
+     * 
+     * @authenticated
      */
     public function update(Request $request, $id)
     {
@@ -157,6 +165,8 @@ class GroupController extends Controller
      * Delete group
      * 
      * @queryUrl id string required
+     * 
+     * @authenticated
      */
     public function destroy($id)
     {

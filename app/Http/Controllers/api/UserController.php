@@ -25,6 +25,8 @@ class UserController extends Controller
      * Users List
      * 
      * @queryUrl page integer
+     * 
+     * @authenticated
      */
     public function index()
     {
@@ -79,6 +81,8 @@ class UserController extends Controller
      * @bodyParam profile_picture file
      * @bodyParam group_id string required
      * @bodyParam is_super_admin boolean
+     * 
+     * @authenticated
      */
     public function store(Request $request)
     {
@@ -114,6 +118,8 @@ class UserController extends Controller
      * Show User
      * 
      * @queryParam id string required
+     * 
+     * @authenticated
      */
     public function show($id)
     {
@@ -152,6 +158,8 @@ class UserController extends Controller
      * @bodyParam profile_picture file
      * @bodyParam group_id string required
      * @bodyParam is_super_admin boolean
+     * 
+     * @authenticated
      */
     public function update(Request $request, $id)
     {
@@ -191,6 +199,8 @@ class UserController extends Controller
      * Delete User
      * 
      * @queryUrl id string required
+     * 
+     * @authenticated
      */
     public function destroy($id)
     {

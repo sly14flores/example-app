@@ -1,16 +1,17 @@
-name: Groups
+name: Contacts
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: v1/groups
+    uri: v1/contacts
     metadata:
-      title: 'Groups List'
+      title: 'Contacts List'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -19,7 +20,7 @@ endpoints:
         name: page
         description: ''
         required: false
-        example: 6
+        example: 9
         type: integer
         custom: []
     bodyParameters: []
@@ -27,22 +28,48 @@ endpoints:
     responseFields: []
   -
     httpMethods:
-      - DELETE
-    uri: 'v1/group/{id}'
+      - POST
+    uri: v1/contact
     metadata:
-      title: 'Delete group'
+      title: |-
+        Add New Contact
+
+        bodyParam user_id string required
+        bodyParam first_name string required
+        bodyParam last_name string required
+        bodyParam email string
+        bodyParam cp_no string
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'v1/contact/{id}'
+    metadata:
+      title: 'Show Contact'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
       id:
         name: id
-        description: 'The ID of the group.'
+        description: 'The ID of the contact.'
         required: true
-        example: bfdb182a-2ed9-4bea-80fd-065bdd308f3a
+        example: quae
         type: string
         custom: []
     queryParameters: []
@@ -53,59 +80,30 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'v1/group/{id}'
+    uri: 'v1/contact/{id}'
     metadata:
-      title: 'Update Group Info'
+      title: |-
+        Update Contact Info
+
+        queryUrl id string required
+        bodyParam user_id string required
+        bodyParam first_name string required
+        bodyParam last_name string required
+        bodyParam email string
+        bodyParam cp_no string
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
       id:
         name: id
-        description: 'The ID of the group.'
+        description: 'The ID of the contact.'
         required: true
-        example: bfdb182a-2ed9-4bea-80fd-065bdd308f3a
-        type: string
-        custom: []
-    queryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
-        required: true
-        example: porro
-        type: string
-        custom: []
-      description:
-        name: description
-        description: ''
-        required: false
-        example: illo
-        type: string
-        custom: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: 'v1/group/{id}'
-    metadata:
-      title: 'Show Group'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the group.'
-        required: true
-        example: bfdb182a-2ed9-4bea-80fd-065bdd308f3a
+        example: aliquid
         type: string
         custom: []
     queryParameters: []
@@ -114,32 +112,26 @@ endpoints:
     responseFields: []
   -
     httpMethods:
-      - POST
-    uri: v1/group
+      - DELETE
+    uri: 'v1/contact/{id}'
     metadata:
-      title: 'Add New Group'
+      title: 'Delete Contact'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: ''
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the contact.'
         required: true
-        example: rem
+        example: molestiae
         type: string
         custom: []
-      description:
-        name: description
-        description: ''
-        required: false
-        example: tempora
-        type: string
-        custom: []
+    queryParameters: []
+    bodyParameters: []
     responses: []
     responseFields: []

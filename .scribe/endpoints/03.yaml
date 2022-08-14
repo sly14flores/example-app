@@ -1,0 +1,220 @@
+name: Users
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: v1/users
+    metadata:
+      title: 'Users List'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'v1/user/{id}'
+    metadata:
+      title: 'Update User Info'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: e15dc8ff-e0a9-423c-8088-4c6718b579f4
+        type: string
+        custom: []
+    queryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: dolore
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: voluptas
+        type: string
+        custom: []
+      email:
+        name: email
+        description: ''
+        required: true
+        example: explicabo
+        type: string
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: suscipit
+        type: string
+        custom: []
+      profile_picture:
+        name: profile_picture
+        description: ''
+        required: false
+        example: null
+        type: file
+        custom: []
+      group_id:
+        name: group_id
+        description: ''
+        required: true
+        example: omnis
+        type: string
+        custom: []
+      is_super_admin:
+        name: is_super_admin
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        custom: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'v1/user/{id}'
+    metadata:
+      title: 'Show User'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: e15dc8ff-e0a9-423c-8088-4c6718b579f4
+        type: string
+        custom: []
+    queryParameters:
+      id:
+        name: id
+        description: ''
+        required: true
+        example: animi
+        type: string
+        custom: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'v1/user/{id}'
+    metadata:
+      title: 'Delete User'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: e15dc8ff-e0a9-423c-8088-4c6718b579f4
+        type: string
+        custom: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: v1/user
+    metadata:
+      title: 'Add New User'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: deleniti
+        type: string
+        custom: []
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: eum
+        type: string
+        custom: []
+      email:
+        name: email
+        description: ''
+        required: true
+        example: perferendis
+        type: string
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: quis
+        type: string
+        custom: []
+      profile_picture:
+        name: profile_picture
+        description: ''
+        required: false
+        example: null
+        type: file
+        custom: []
+      group_id:
+        name: group_id
+        description: ''
+        required: true
+        example: qui
+        type: string
+        custom: []
+      is_super_admin:
+        name: is_super_admin
+        description: ''
+        required: false
+        example: true
+        type: boolean
+        custom: []
+    responses: []
+    responseFields: []

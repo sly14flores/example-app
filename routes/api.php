@@ -7,6 +7,8 @@ use App\Http\Controllers\api\GroupController;
 use App\Http\Controllers\api\ContactController;
 use App\Http\Controllers\api\UserController;
 
+use App\Http\Controllers\api\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,6 +25,14 @@ use App\Http\Controllers\api\UserController;
 // });
 
 Route::prefix('v1')->group(function() {
+
+    /**
+     * Login
+     */
+    Route::prefix('auth')->group(function() {
+        Route::post('login', [LoginController::class, 'login']);
+        Route::post('logout', [LoginController::class, 'logout']);
+    });
 
     /**
     * Groups

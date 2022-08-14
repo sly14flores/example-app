@@ -1,19 +1,52 @@
-name: Users
+name: Groups
 description: ''
 endpoints:
   -
     httpMethods:
       - GET
-    uri: v1/users
+    uri: v1/groups
     metadata:
-      title: 'Users List'
+      title: 'Groups List'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
+    queryParameters:
+      page:
+        name: page
+        description: ''
+        required: false
+        example: 20
+        type: integer
+        custom: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'v1/group/{id}'
+    metadata:
+      title: 'Delete group'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the group.'
+        required: true
+        example: bfdb182a-2ed9-4bea-80fd-065bdd308f3a
+        type: string
+        custom: []
     queryParameters: []
     bodyParameters: []
     responses: []
@@ -22,125 +55,61 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'v1/user/{id}'
+    uri: 'v1/group/{id}'
     metadata:
-      title: 'Update User Info'
+      title: 'Update Group Info'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
-      Content-Type: multipart/form-data
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
       Accept: application/json
     urlParameters:
       id:
         name: id
-        description: 'The ID of the user.'
+        description: 'The ID of the group.'
         required: true
-        example: 9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83
+        example: bfdb182a-2ed9-4bea-80fd-065bdd308f3a
         type: string
         custom: []
     queryParameters: []
     bodyParameters:
-      first_name:
-        name: first_name
+      name:
+        name: name
         description: ''
         required: true
-        example: quas
+        example: voluptatem
         type: string
         custom: []
-      last_name:
-        name: last_name
-        description: ''
-        required: true
-        example: nihil
-        type: string
-        custom: []
-      email:
-        name: email
-        description: ''
-        required: true
-        example: sed
-        type: string
-        custom: []
-      password:
-        name: password
-        description: ''
-        required: true
-        example: voluptatibus
-        type: string
-        custom: []
-      profile_picture:
-        name: profile_picture
+      description:
+        name: description
         description: ''
         required: false
-        example: null
-        type: file
-        custom: []
-      group_id:
-        name: group_id
-        description: ''
-        required: true
         example: et
         type: string
-        custom: []
-      is_super_admin:
-        name: is_super_admin
-        description: ''
-        required: false
-        example: true
-        type: boolean
         custom: []
     responses: []
     responseFields: []
   -
     httpMethods:
       - GET
-    uri: 'v1/user/{id}'
+    uri: 'v1/group/{id}'
     metadata:
-      title: 'Show User'
+      title: 'Show Group'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
       id:
         name: id
-        description: 'The ID of the user.'
+        description: 'The ID of the group.'
         required: true
-        example: 9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83
-        type: string
-        custom: []
-    queryParameters:
-      id:
-        name: id
-        description: ''
-        required: true
-        example: dolorem
-        type: string
-        custom: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'v1/user/{id}'
-    metadata:
-      title: 'Delete User'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the user.'
-        required: true
-        example: 9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83
+        example: bfdb182a-2ed9-4bea-80fd-065bdd308f3a
         type: string
         custom: []
     queryParameters: []
@@ -150,66 +119,32 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: v1/user
+    uri: v1/group
     metadata:
-      title: 'Add New User'
+      title: 'Add New Group'
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
-      Content-Type: multipart/form-data
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
       Accept: application/json
     urlParameters: []
     queryParameters: []
     bodyParameters:
-      first_name:
-        name: first_name
+      name:
+        name: name
         description: ''
         required: true
-        example: provident
+        example: sed
         type: string
         custom: []
-      last_name:
-        name: last_name
-        description: ''
-        required: true
-        example: et
-        type: string
-        custom: []
-      email:
-        name: email
-        description: ''
-        required: true
-        example: esse
-        type: string
-        custom: []
-      password:
-        name: password
-        description: ''
-        required: true
-        example: est
-        type: string
-        custom: []
-      profile_picture:
-        name: profile_picture
+      description:
+        name: description
         description: ''
         required: false
-        example: null
-        type: file
-        custom: []
-      group_id:
-        name: group_id
-        description: ''
-        required: true
-        example: est
+        example: qui
         type: string
-        custom: []
-      is_super_admin:
-        name: is_super_admin
-        description: ''
-        required: false
-        example: false
-        type: boolean
         custom: []
     responses: []
     responseFields: []

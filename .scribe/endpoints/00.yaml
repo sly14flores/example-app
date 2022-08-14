@@ -1,12 +1,15 @@
-name: Contacts
+name: Authentication
 description: ''
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: v1/contacts
+      - POST
+    uri: v1/auth/login
     metadata:
-      title: 'Contacts List'
+      title: |-
+        Login user
+
+        Login using email and password
       description: ''
       authenticated: false
       custom: []
@@ -14,118 +17,41 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
-    queryParameters:
-      page:
-        name: page
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
         description: ''
-        required: false
-        example: 10
-        type: integer
+        required: true
+        example: assumenda
+        type: string
         custom: []
-    bodyParameters: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: animi
+        type: string
+        custom: []
     responses: []
     responseFields: []
   -
     httpMethods:
       - POST
-    uri: v1/contact
+    uri: v1/auth/logout
     metadata:
       title: |-
-        Add New Contact
+        Logout
 
-        bodyParam user_id string required
-        bodyParam first_name string required
-        bodyParam last_name string required
-        bodyParam email string
-        bodyParam cp_no string
+        Logout user
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: 'v1/contact/{id}'
-    metadata:
-      title: 'Show Contact'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the contact.'
-        required: true
-        example: ipsam
-        type: string
-        custom: []
-    queryParameters: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'v1/contact/{id}'
-    metadata:
-      title: |-
-        Update Contact Info
-
-        queryUrl id string required
-        bodyParam user_id string required
-        bodyParam first_name string required
-        bodyParam last_name string required
-        bodyParam email string
-        bodyParam cp_no string
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the contact.'
-        required: true
-        example: voluptas
-        type: string
-        custom: []
-    queryParameters: []
-    bodyParameters: []
-    responses: []
-    responseFields: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'v1/contact/{id}'
-    metadata:
-      title: 'Delete Contact'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the contact.'
-        required: true
-        example: similique
-        type: string
-        custom: []
     queryParameters: []
     bodyParameters: []
     responses: []

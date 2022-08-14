@@ -70,6 +70,23 @@
                                                 </ul>
                     
                     <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authentication">
+                    <a href="#authentication">Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="authentication-POSTv1-auth-login">
+                        <a href="#authentication-POSTv1-auth-login">Login user
+
+Login using email and password</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="authentication-POSTv1-auth-logout">
+                        <a href="#authentication-POSTv1-auth-logout">Logout
+
+Logout user</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+                    <ul id="tocify-header-3" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="contacts">
                     <a href="#contacts">Contacts</a>
                 </li>
@@ -104,7 +121,7 @@ bodyParam cp_no string</a>
                     </li>
                                                     </ul>
                             </ul>
-                    <ul id="tocify-header-3" class="tocify-header">
+                    <ul id="tocify-header-4" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="groups">
                     <a href="#groups">Groups</a>
                 </li>
@@ -126,7 +143,7 @@ bodyParam cp_no string</a>
                     </li>
                                                     </ul>
                             </ul>
-                    <ul id="tocify-header-4" class="tocify-header">
+                    <ul id="tocify-header-5" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="users">
                     <a href="#users">Users</a>
                 </li>
@@ -158,7 +175,7 @@ bodyParam cp_no string</a>
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 11 2022</li>
+        <li>Last updated: August 14 2022</li>
     </ul>
 </div>
 
@@ -179,6 +196,213 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
+        <h1 id="authentication">Authentication</h1>
+
+    
+
+            <h2 id="authentication-POSTv1-auth-login">Login user
+
+Login using email and password</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTv1-auth-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://api.example.local/v1/auth/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"assumenda\",
+    \"password\": \"animi\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api.example.local/v1/auth/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "assumenda",
+    "password": "animi"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTv1-auth-login">
+</span>
+<span id="execution-results-POSTv1-auth-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTv1-auth-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTv1-auth-login"></code></pre>
+</span>
+<span id="execution-error-POSTv1-auth-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTv1-auth-login"></code></pre>
+</span>
+<form id="form-POSTv1-auth-login" data-method="POST"
+      data-path="v1/auth/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTv1-auth-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTv1-auth-login"
+                    onclick="tryItOut('POSTv1-auth-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTv1-auth-login"
+                    onclick="cancelTryOut('POSTv1-auth-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTv1-auth-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>v1/auth/login</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTv1-auth-login"
+               value="assumenda"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTv1-auth-login"
+               value="animi"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+        </form>
+
+            <h2 id="authentication-POSTv1-auth-logout">Logout
+
+Logout user</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTv1-auth-logout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://api.example.local/v1/auth/logout" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://api.example.local/v1/auth/logout"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTv1-auth-logout">
+</span>
+<span id="execution-results-POSTv1-auth-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTv1-auth-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTv1-auth-logout"></code></pre>
+</span>
+<span id="execution-error-POSTv1-auth-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTv1-auth-logout"></code></pre>
+</span>
+<form id="form-POSTv1-auth-logout" data-method="POST"
+      data-path="v1/auth/logout"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTv1-auth-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTv1-auth-logout"
+                    onclick="tryItOut('POSTv1-auth-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTv1-auth-logout"
+                    onclick="cancelTryOut('POSTv1-auth-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTv1-auth-logout" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>v1/auth/logout</code></b>
+        </p>
+                <p>
+            <label id="auth-POSTv1-auth-logout" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTv1-auth-logout"
+                                                                data-component="header"></label>
+        </p>
+                </form>
+
         <h1 id="contacts">Contacts</h1>
 
     
@@ -186,6 +410,7 @@ You can switch the language used with the tabs at the top right (or from the nav
             <h2 id="contacts-GETv1-contacts">Contacts List</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -196,7 +421,8 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/contacts?page=10" \
+    --get "http://api.example.local/v1/contacts?page=9" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -207,12 +433,13 @@ You can switch the language used with the tabs at the top right (or from the nav
 );
 
 const params = {
-    "page": "10",
+    "page": "9",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -238,10 +465,10 @@ fetch(url, {
 </span>
 <form id="form-GETv1-contacts" data-method="GET"
       data-path="v1/contacts"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETv1-contacts', this);">
     <h3>
@@ -265,13 +492,21 @@ fetch(url, {
             <small class="badge badge-green">GET</small>
             <b><code>v1/contacts</code></b>
         </p>
-                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                <p>
+            <label id="auth-GETv1-contacts" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETv1-contacts"
+                                                                data-component="header"></label>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                     <p>
                 <b><code>page</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
                 <input type="number"
                name="page"
                data-endpoint="GETv1-contacts"
-               value="10"
+               value="9"
                data-component="query" hidden>
     <br>
 
@@ -287,6 +522,7 @@ bodyParam email string
 bodyParam cp_no string</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -298,6 +534,7 @@ bodyParam cp_no string</h2>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://api.example.local/v1/contact" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -308,6 +545,7 @@ bodyParam cp_no string</h2>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -333,10 +571,10 @@ fetch(url, {
 </span>
 <form id="form-POSTv1-contact" data-method="POST"
       data-path="v1/contact"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTv1-contact', this);">
     <h3>
@@ -360,11 +598,20 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>v1/contact</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-POSTv1-contact" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTv1-contact"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="contacts-GETv1-contact--id-">Show Contact</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -375,17 +622,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/contact/ipsam" \
+    --get "http://api.example.local/v1/contact/quae" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/contact/ipsam"
+    "http://api.example.local/v1/contact/quae"
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -411,10 +660,10 @@ fetch(url, {
 </span>
 <form id="form-GETv1-contact--id-" data-method="GET"
       data-path="v1/contact/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETv1-contact--id-', this);">
     <h3>
@@ -438,13 +687,21 @@ fetch(url, {
             <small class="badge badge-green">GET</small>
             <b><code>v1/contact/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-GETv1-contact--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETv1-contact--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="GETv1-contact--id-"
-               value="ipsam"
+               value="quae"
                data-component="url" hidden>
     <br>
 <p>The ID of the contact.</p>
@@ -461,6 +718,7 @@ bodyParam email string
 bodyParam cp_no string</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -471,17 +729,19 @@ bodyParam cp_no string</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.example.local/v1/contact/voluptas" \
+    "http://api.example.local/v1/contact/aliquid" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/contact/voluptas"
+    "http://api.example.local/v1/contact/aliquid"
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -507,10 +767,10 @@ fetch(url, {
 </span>
 <form id="form-PUTv1-contact--id-" data-method="PUT"
       data-path="v1/contact/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('PUTv1-contact--id-', this);">
     <h3>
@@ -538,13 +798,21 @@ fetch(url, {
             <small class="badge badge-purple">PATCH</small>
             <b><code>v1/contact/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-PUTv1-contact--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTv1-contact--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="PUTv1-contact--id-"
-               value="voluptas"
+               value="aliquid"
                data-component="url" hidden>
     <br>
 <p>The ID of the contact.</p>
@@ -554,6 +822,7 @@ fetch(url, {
             <h2 id="contacts-DELETEv1-contact--id-">Delete Contact</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -564,17 +833,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.example.local/v1/contact/similique" \
+    "http://api.example.local/v1/contact/molestiae" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/contact/similique"
+    "http://api.example.local/v1/contact/molestiae"
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -600,10 +871,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEv1-contact--id-" data-method="DELETE"
       data-path="v1/contact/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEv1-contact--id-', this);">
     <h3>
@@ -627,13 +898,21 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>v1/contact/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-DELETEv1-contact--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEv1-contact--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="DELETEv1-contact--id-"
-               value="similique"
+               value="molestiae"
                data-component="url" hidden>
     <br>
 <p>The ID of the contact.</p>
@@ -647,6 +926,7 @@ fetch(url, {
             <h2 id="groups-GETv1-groups">Groups List</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -657,7 +937,8 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/groups?page=6" \
+    --get "http://api.example.local/v1/groups?page=20" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -668,12 +949,13 @@ fetch(url, {
 );
 
 const params = {
-    "page": "6",
+    "page": "20",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -699,10 +981,10 @@ fetch(url, {
 </span>
 <form id="form-GETv1-groups" data-method="GET"
       data-path="v1/groups"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETv1-groups', this);">
     <h3>
@@ -726,13 +1008,21 @@ fetch(url, {
             <small class="badge badge-green">GET</small>
             <b><code>v1/groups</code></b>
         </p>
-                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                <p>
+            <label id="auth-GETv1-groups" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETv1-groups"
+                                                                data-component="header"></label>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
                     <p>
                 <b><code>page</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
                 <input type="number"
                name="page"
                data-endpoint="GETv1-groups"
-               value="6"
+               value="20"
                data-component="query" hidden>
     <br>
 
@@ -742,6 +1032,7 @@ fetch(url, {
             <h2 id="groups-DELETEv1-group--id-">Delete group</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -753,6 +1044,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
     "http://api.example.local/v1/group/bfdb182a-2ed9-4bea-80fd-065bdd308f3a" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -763,6 +1055,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -788,10 +1081,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEv1-group--id-" data-method="DELETE"
       data-path="v1/group/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEv1-group--id-', this);">
     <h3>
@@ -815,7 +1108,15 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>v1/group/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-DELETEv1-group--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEv1-group--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -831,6 +1132,7 @@ fetch(url, {
             <h2 id="groups-PUTv1-group--id-">Update Group Info</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -842,11 +1144,12 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://api.example.local/v1/group/bfdb182a-2ed9-4bea-80fd-065bdd308f3a" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"porro\",
-    \"description\": \"illo\"
+    \"name\": \"voluptatem\",
+    \"description\": \"et\"
 }"
 </code></pre></div>
 
@@ -857,13 +1160,14 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "porro",
-    "description": "illo"
+    "name": "voluptatem",
+    "description": "et"
 };
 
 fetch(url, {
@@ -888,10 +1192,10 @@ fetch(url, {
 </span>
 <form id="form-PUTv1-group--id-" data-method="PUT"
       data-path="v1/group/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('PUTv1-group--id-', this);">
     <h3>
@@ -919,7 +1223,15 @@ fetch(url, {
             <small class="badge badge-purple">PATCH</small>
             <b><code>v1/group/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-PUTv1-group--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTv1-group--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -936,7 +1248,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTv1-group--id-"
-               value="porro"
+               value="voluptatem"
                data-component="body" hidden>
     <br>
 
@@ -946,7 +1258,7 @@ fetch(url, {
                 <input type="text"
                name="description"
                data-endpoint="PUTv1-group--id-"
-               value="illo"
+               value="et"
                data-component="body" hidden>
     <br>
 
@@ -956,6 +1268,7 @@ fetch(url, {
             <h2 id="groups-GETv1-group--id-">Show Group</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -967,6 +1280,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://api.example.local/v1/group/bfdb182a-2ed9-4bea-80fd-065bdd308f3a" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -977,6 +1291,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1002,10 +1317,10 @@ fetch(url, {
 </span>
 <form id="form-GETv1-group--id-" data-method="GET"
       data-path="v1/group/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETv1-group--id-', this);">
     <h3>
@@ -1029,7 +1344,15 @@ fetch(url, {
             <small class="badge badge-green">GET</small>
             <b><code>v1/group/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-GETv1-group--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETv1-group--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -1045,6 +1368,7 @@ fetch(url, {
             <h2 id="groups-POSTv1-group">Add New Group</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1056,11 +1380,12 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://api.example.local/v1/group" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"rem\",
-    \"description\": \"tempora\"
+    \"name\": \"sed\",
+    \"description\": \"qui\"
 }"
 </code></pre></div>
 
@@ -1071,13 +1396,14 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "rem",
-    "description": "tempora"
+    "name": "sed",
+    "description": "qui"
 };
 
 fetch(url, {
@@ -1102,10 +1428,10 @@ fetch(url, {
 </span>
 <form id="form-POSTv1-group" data-method="POST"
       data-path="v1/group"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTv1-group', this);">
     <h3>
@@ -1129,13 +1455,21 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>v1/group</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-POSTv1-group" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTv1-group"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="name"
                data-endpoint="POSTv1-group"
-               value="rem"
+               value="sed"
                data-component="body" hidden>
     <br>
 
@@ -1145,7 +1479,7 @@ fetch(url, {
                 <input type="text"
                name="description"
                data-endpoint="POSTv1-group"
-               value="tempora"
+               value="qui"
                data-component="body" hidden>
     <br>
 
@@ -1159,6 +1493,7 @@ fetch(url, {
             <h2 id="users-GETv1-users">Users List</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1170,6 +1505,7 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://api.example.local/v1/users" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1180,6 +1516,7 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1205,10 +1542,10 @@ fetch(url, {
 </span>
 <form id="form-GETv1-users" data-method="GET"
       data-path="v1/users"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETv1-users', this);">
     <h3>
@@ -1232,11 +1569,20 @@ fetch(url, {
             <small class="badge badge-green">GET</small>
             <b><code>v1/users</code></b>
         </p>
-                    </form>
+                <p>
+            <label id="auth-GETv1-users" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETv1-users"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="users-PUTv1-user--id-">Update User Info</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1247,35 +1593,37 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.example.local/v1/user/9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83" \
+    "http://api.example.local/v1/user/e15dc8ff-e0a9-423c-8088-4c6718b579f4" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "first_name=quas" \
-    --form "last_name=nihil" \
-    --form "email=sed" \
-    --form "password=voluptatibus" \
-    --form "group_id=et" \
-    --form "is_super_admin=1" \
-    --form "profile_picture=@C:\Users\LENOVO\AppData\Local\Temp\phpE7C1.tmp" </code></pre></div>
+    --form "first_name=dolore" \
+    --form "last_name=voluptas" \
+    --form "email=explicabo" \
+    --form "password=suscipit" \
+    --form "group_id=omnis" \
+    --form "is_super_admin=" \
+    --form "profile_picture=@C:\Users\LENOVO\AppData\Local\Temp\php5534.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/user/9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83"
+    "http://api.example.local/v1/user/e15dc8ff-e0a9-423c-8088-4c6718b579f4"
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
 const body = new FormData();
-body.append('first_name', 'quas');
-body.append('last_name', 'nihil');
-body.append('email', 'sed');
-body.append('password', 'voluptatibus');
-body.append('group_id', 'et');
-body.append('is_super_admin', '1');
+body.append('first_name', 'dolore');
+body.append('last_name', 'voluptas');
+body.append('email', 'explicabo');
+body.append('password', 'suscipit');
+body.append('group_id', 'omnis');
+body.append('is_super_admin', '');
 body.append('profile_picture', document.querySelector('input[name="profile_picture"]').files[0]);
 
 fetch(url, {
@@ -1300,10 +1648,10 @@ fetch(url, {
 </span>
 <form id="form-PUTv1-user--id-" data-method="PUT"
       data-path="v1/user/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="1"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"multipart\/form-data","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"multipart\/form-data","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('PUTv1-user--id-', this);">
     <h3>
@@ -1331,13 +1679,21 @@ fetch(url, {
             <small class="badge badge-purple">PATCH</small>
             <b><code>v1/user/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-PUTv1-user--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTv1-user--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="PUTv1-user--id-"
-               value="9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83"
+               value="e15dc8ff-e0a9-423c-8088-4c6718b579f4"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
@@ -1348,7 +1704,7 @@ fetch(url, {
                 <input type="text"
                name="first_name"
                data-endpoint="PUTv1-user--id-"
-               value="quas"
+               value="dolore"
                data-component="body" hidden>
     <br>
 
@@ -1358,7 +1714,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="PUTv1-user--id-"
-               value="nihil"
+               value="voluptas"
                data-component="body" hidden>
     <br>
 
@@ -1368,7 +1724,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="PUTv1-user--id-"
-               value="sed"
+               value="explicabo"
                data-component="body" hidden>
     <br>
 
@@ -1378,7 +1734,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="PUTv1-user--id-"
-               value="voluptatibus"
+               value="suscipit"
                data-component="body" hidden>
     <br>
 
@@ -1398,7 +1754,7 @@ fetch(url, {
                 <input type="text"
                name="group_id"
                data-endpoint="PUTv1-user--id-"
-               value="et"
+               value="omnis"
                data-component="body" hidden>
     <br>
 
@@ -1429,6 +1785,7 @@ fetch(url, {
             <h2 id="users-GETv1-user--id-">Show User</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1439,23 +1796,25 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/user/9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83?id=dolorem" \
+    --get "http://api.example.local/v1/user/e15dc8ff-e0a9-423c-8088-4c6718b579f4?id=animi" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/user/9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83"
+    "http://api.example.local/v1/user/e15dc8ff-e0a9-423c-8088-4c6718b579f4"
 );
 
 const params = {
-    "id": "dolorem",
+    "id": "animi",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1481,10 +1840,10 @@ fetch(url, {
 </span>
 <form id="form-GETv1-user--id-" data-method="GET"
       data-path="v1/user/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETv1-user--id-', this);">
     <h3>
@@ -1508,13 +1867,21 @@ fetch(url, {
             <small class="badge badge-green">GET</small>
             <b><code>v1/user/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-GETv1-user--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETv1-user--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="GETv1-user--id-"
-               value="9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83"
+               value="e15dc8ff-e0a9-423c-8088-4c6718b579f4"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
@@ -1525,7 +1892,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="GETv1-user--id-"
-               value="dolorem"
+               value="animi"
                data-component="query" hidden>
     <br>
 
@@ -1535,6 +1902,7 @@ fetch(url, {
             <h2 id="users-DELETEv1-user--id-">Delete User</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1545,17 +1913,19 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.example.local/v1/user/9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83" \
+    "http://api.example.local/v1/user/e15dc8ff-e0a9-423c-8088-4c6718b579f4" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/user/9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83"
+    "http://api.example.local/v1/user/e15dc8ff-e0a9-423c-8088-4c6718b579f4"
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1581,10 +1951,10 @@ fetch(url, {
 </span>
 <form id="form-DELETEv1-user--id-" data-method="DELETE"
       data-path="v1/user/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('DELETEv1-user--id-', this);">
     <h3>
@@ -1608,13 +1978,21 @@ fetch(url, {
             <small class="badge badge-red">DELETE</small>
             <b><code>v1/user/{id}</code></b>
         </p>
-                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <p>
+            <label id="auth-DELETEv1-user--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEv1-user--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
                 <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="id"
                data-endpoint="DELETEv1-user--id-"
-               value="9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83"
+               value="e15dc8ff-e0a9-423c-8088-4c6718b579f4"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
@@ -1624,6 +2002,7 @@ fetch(url, {
             <h2 id="users-POSTv1-user">Add New User</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1635,15 +2014,16 @@ fetch(url, {
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://api.example.local/v1/user" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "first_name=provident" \
-    --form "last_name=et" \
-    --form "email=esse" \
-    --form "password=est" \
-    --form "group_id=est" \
-    --form "is_super_admin=" \
-    --form "profile_picture=@C:\Users\LENOVO\AppData\Local\Temp\phpE7A0.tmp" </code></pre></div>
+    --form "first_name=deleniti" \
+    --form "last_name=eum" \
+    --form "email=perferendis" \
+    --form "password=quis" \
+    --form "group_id=qui" \
+    --form "is_super_admin=1" \
+    --form "profile_picture=@C:\Users\LENOVO\AppData\Local\Temp\php5514.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1652,17 +2032,18 @@ fetch(url, {
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
 const body = new FormData();
-body.append('first_name', 'provident');
-body.append('last_name', 'et');
-body.append('email', 'esse');
-body.append('password', 'est');
-body.append('group_id', 'est');
-body.append('is_super_admin', '');
+body.append('first_name', 'deleniti');
+body.append('last_name', 'eum');
+body.append('email', 'perferendis');
+body.append('password', 'quis');
+body.append('group_id', 'qui');
+body.append('is_super_admin', '1');
 body.append('profile_picture', document.querySelector('input[name="profile_picture"]').files[0]);
 
 fetch(url, {
@@ -1687,10 +2068,10 @@ fetch(url, {
 </span>
 <form id="form-POSTv1-user" data-method="POST"
       data-path="v1/user"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="1"
       data-isarraybody="0"
-      data-headers='{"Content-Type":"multipart\/form-data","Accept":"application\/json"}'
+      data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"multipart\/form-data","Accept":"application\/json"}'
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTv1-user', this);">
     <h3>
@@ -1714,13 +2095,21 @@ fetch(url, {
             <small class="badge badge-black">POST</small>
             <b><code>v1/user</code></b>
         </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <p>
+            <label id="auth-POSTv1-user" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTv1-user"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <p>
             <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
                name="first_name"
                data-endpoint="POSTv1-user"
-               value="provident"
+               value="deleniti"
                data-component="body" hidden>
     <br>
 
@@ -1730,7 +2119,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="POSTv1-user"
-               value="et"
+               value="eum"
                data-component="body" hidden>
     <br>
 
@@ -1740,7 +2129,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTv1-user"
-               value="esse"
+               value="perferendis"
                data-component="body" hidden>
     <br>
 
@@ -1750,7 +2139,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTv1-user"
-               value="est"
+               value="quis"
                data-component="body" hidden>
     <br>
 
@@ -1770,7 +2159,7 @@ fetch(url, {
                 <input type="text"
                name="group_id"
                data-endpoint="POSTv1-user"
-               value="est"
+               value="qui"
                data-component="body" hidden>
     <br>
 

@@ -24,6 +24,8 @@ class ContactController extends Controller
      * Contacts List
      * 
      * @queryParam page integer
+     * 
+     * @authenticated
      */
     public function index()
     {
@@ -74,6 +76,8 @@ class ContactController extends Controller
      * bodyParam last_name string required
      * bodyParam email string
      * bodyParam cp_no string
+     * 
+     * @authenticated
      */
     public function store(Request $request)
     {
@@ -98,6 +102,8 @@ class ContactController extends Controller
      * Show Contact
      * 
      * @queryUrl id string required
+     * 
+     * @authenticated
      */
     public function show($id)
     {
@@ -134,6 +140,8 @@ class ContactController extends Controller
      * bodyParam last_name string required
      * bodyParam email string
      * bodyParam cp_no string
+     * 
+     * @authenticated
      */
     public function update(Request $request, $id)
     {
@@ -163,6 +171,8 @@ class ContactController extends Controller
      * Delete Contact
      * 
      * @queryUrl id string required
+     * 
+     * @authenticated
      */
     public function destroy($id)
     {

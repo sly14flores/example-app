@@ -7,6 +7,76 @@ servers:
   -
     url: 'http://api.example.local'
 paths:
+  /v1/auth/login:
+    post:
+      summary: "Login user\n\nLogin using email and password"
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: assumenda
+                password:
+                  type: string
+                  description: ''
+                  example: animi
+              required:
+                - email
+                - password
+      security: []
+  /v1/auth/logout:
+    post:
+      summary: "Logout\n\nLogout user"
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Authentication
   /v1/contacts:
     get:
       summary: 'Contacts List'
@@ -16,12 +86,19 @@ paths:
           in: query
           name: page
           description: ''
-          example: 10
+          example: 9
           required: false
           schema:
             type: integer
             description: ''
-            example: 10
+            example: 9
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
         -
           in: header
           name: Content-Type
@@ -39,7 +116,6 @@ paths:
       responses: {  }
       tags:
         - Contacts
-      security: []
   /v1/contact:
     post:
       summary: "Add New Contact\n\nbodyParam user_id string required\nbodyParam first_name string required\nbodyParam last_name string required\nbodyParam email string\nbodyParam cp_no string"
@@ -47,6 +123,13 @@ paths:
       parameters:
         -
           in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
           name: Content-Type
           description: ''
           example: application/json
@@ -62,7 +145,6 @@ paths:
       responses: {  }
       tags:
         - Contacts
-      security: []
   '/v1/contact/{id}':
     get:
       summary: 'Show Contact'
@@ -70,6 +152,13 @@ paths:
       parameters:
         -
           in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
           name: Content-Type
           description: ''
           example: application/json
@@ -85,13 +174,19 @@ paths:
       responses: {  }
       tags:
         - Contacts
-      security: []
     put:
       summary: "Update Contact Info\n\nqueryUrl id string required\nbodyParam user_id string required\nbodyParam first_name string required\nbodyParam last_name string required\nbodyParam email string\nbodyParam cp_no string"
       description: ''
       parameters:
         -
           in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
           name: Content-Type
           description: ''
           example: application/json
@@ -107,13 +202,19 @@ paths:
       responses: {  }
       tags:
         - Contacts
-      security: []
     delete:
       summary: 'Delete Contact'
       description: ''
       parameters:
         -
           in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
           name: Content-Type
           description: ''
           example: application/json
@@ -129,13 +230,12 @@ paths:
       responses: {  }
       tags:
         - Contacts
-      security: []
     parameters:
       -
         in: path
         name: id
         description: 'The ID of the contact.'
-        example: ipsam
+        example: quae
         required: true
         schema:
           type: string
@@ -148,12 +248,19 @@ paths:
           in: query
           name: page
           description: ''
-          example: 6
+          example: 20
           required: false
           schema:
             type: integer
             description: ''
-            example: 6
+            example: 20
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
         -
           in: header
           name: Content-Type
@@ -171,7 +278,6 @@ paths:
       responses: {  }
       tags:
         - Groups
-      security: []
   '/v1/group/{id}':
     delete:
       summary: 'Delete group'
@@ -179,6 +285,13 @@ paths:
       parameters:
         -
           in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
           name: Content-Type
           description: ''
           example: application/json
@@ -194,11 +307,17 @@ paths:
       responses: {  }
       tags:
         - Groups
-      security: []
     put:
       summary: 'Update Group Info'
       description: ''
       parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
         -
           in: header
           name: Content-Type
@@ -226,18 +345,24 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: porro
+                  example: voluptatem
                 description:
                   type: string
                   description: ''
-                  example: illo
+                  example: et
               required:
                 - name
-      security: []
     get:
       summary: 'Show Group'
       description: ''
       parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
         -
           in: header
           name: Content-Type
@@ -255,7 +380,6 @@ paths:
       responses: {  }
       tags:
         - Groups
-      security: []
     parameters:
       -
         in: path
@@ -272,6 +396,13 @@ paths:
       parameters:
         -
           in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
           name: Content-Type
           description: ''
           example: application/json
@@ -297,14 +428,13 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: rem
+                  example: sed
                 description:
                   type: string
                   description: ''
-                  example: tempora
+                  example: qui
               required:
                 - name
-      security: []
   /v1/users:
     get:
       summary: 'Users List'
@@ -312,6 +442,13 @@ paths:
       parameters:
         -
           in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
           name: Content-Type
           description: ''
           example: application/json
@@ -327,7 +464,6 @@ paths:
       responses: {  }
       tags:
         - Users
-      security: []
   '/v1/user/{id}':
     put:
       summary: 'Update User Info'
@@ -335,131 +471,11 @@ paths:
       parameters:
         -
           in: header
-          name: Content-Type
+          name: Authorization
           description: ''
-          example: multipart/form-data
+          example: 'Bearer {YOUR_AUTH_KEY}'
           schema:
             type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Users
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                first_name:
-                  type: string
-                  description: ''
-                  example: quas
-                last_name:
-                  type: string
-                  description: ''
-                  example: nihil
-                email:
-                  type: string
-                  description: ''
-                  example: sed
-                password:
-                  type: string
-                  description: ''
-                  example: voluptatibus
-                profile_picture:
-                  type: string
-                  format: binary
-                  description: ''
-                group_id:
-                  type: string
-                  description: ''
-                  example: et
-                is_super_admin:
-                  type: boolean
-                  description: ''
-                  example: true
-              required:
-                - first_name
-                - last_name
-                - email
-                - password
-                - group_id
-      security: []
-    get:
-      summary: 'Show User'
-      description: ''
-      parameters:
-        -
-          in: query
-          name: id
-          description: ''
-          example: dolorem
-          required: true
-          schema:
-            type: string
-            description: ''
-            example: dolorem
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Users
-      security: []
-    delete:
-      summary: 'Delete User'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses: {  }
-      tags:
-        - Users
-      security: []
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the user.'
-        example: 9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83
-        required: true
-        schema:
-          type: string
-  /v1/user:
-    post:
-      summary: 'Add New User'
-      description: ''
-      parameters:
         -
           in: header
           name: Content-Type
@@ -487,19 +503,19 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: provident
+                  example: dolore
                 last_name:
                   type: string
                   description: ''
-                  example: et
+                  example: voluptas
                 email:
                   type: string
                   description: ''
-                  example: esse
+                  example: explicabo
                 password:
                   type: string
                   description: ''
-                  example: est
+                  example: suscipit
                 profile_picture:
                   type: string
                   format: binary
@@ -507,7 +523,7 @@ paths:
                 group_id:
                   type: string
                   description: ''
-                  example: est
+                  example: omnis
                 is_super_admin:
                   type: boolean
                   description: ''
@@ -518,8 +534,155 @@ paths:
                 - email
                 - password
                 - group_id
-      security: []
+    get:
+      summary: 'Show User'
+      description: ''
+      parameters:
+        -
+          in: query
+          name: id
+          description: ''
+          example: animi
+          required: true
+          schema:
+            type: string
+            description: ''
+            example: animi
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Users
+    delete:
+      summary: 'Delete User'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Users
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: e15dc8ff-e0a9-423c-8088-4c6718b579f4
+        required: true
+        schema:
+          type: string
+  /v1/user:
+    post:
+      summary: 'Add New User'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: multipart/form-data
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Users
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: ''
+                  example: deleniti
+                last_name:
+                  type: string
+                  description: ''
+                  example: eum
+                email:
+                  type: string
+                  description: ''
+                  example: perferendis
+                password:
+                  type: string
+                  description: ''
+                  example: quis
+                profile_picture:
+                  type: string
+                  format: binary
+                  description: ''
+                group_id:
+                  type: string
+                  description: ''
+                  example: qui
+                is_super_admin:
+                  type: boolean
+                  description: ''
+                  example: true
+              required:
+                - first_name
+                - last_name
+                - email
+                - password
+                - group_id
 tags:
+  -
+    name: Authentication
+    description: ''
   -
     name: Contacts
     description: ''

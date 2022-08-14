@@ -10,11 +10,73 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "3a43c0e7-6253-422e-805e-36ec12fd3a72",
+        "_postman_id": "f8358b9e-0ef4-4675-939d-72744515feea",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
+        {
+            "name": "Authentication",
+            "description": "",
+            "item": [
+                {
+                    "name": "Login user\n\nLogin using email and password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"assumenda\",\"password\":\"animi\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Logout\n\nLogout user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "v1\/auth\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/v1\/auth\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
         {
             "name": "Contacts",
             "description": "",
@@ -28,12 +90,12 @@
                             "query": [
                                 {
                                     "key": "page",
-                                    "value": "10",
+                                    "value": "9",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/v1\/contacts?page=10"
+                            "raw": "{{baseUrl}}\/v1\/contacts?page=9"
                         },
                         "method": "GET",
                         "header": [
@@ -47,10 +109,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -75,10 +134,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -94,7 +150,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "ipsam",
+                                    "value": "quae",
                                     "description": "The ID of the contact."
                                 }
                             ]
@@ -111,10 +167,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -130,7 +183,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptas",
+                                    "value": "aliquid",
                                     "description": "The ID of the contact."
                                 }
                             ]
@@ -147,10 +200,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -166,7 +216,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "similique",
+                                    "value": "molestiae",
                                     "description": "The ID of the contact."
                                 }
                             ]
@@ -183,10 +233,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 }
@@ -205,12 +252,12 @@
                             "query": [
                                 {
                                     "key": "page",
-                                    "value": "6",
+                                    "value": "20",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/v1\/groups?page=6"
+                            "raw": "{{baseUrl}}\/v1\/groups?page=20"
                         },
                         "method": "GET",
                         "header": [
@@ -224,10 +271,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -260,10 +304,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -297,12 +338,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"porro\",\"description\":\"illo\"}"
+                            "raw": "{\"name\":\"voluptatem\",\"description\":\"et\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -335,10 +373,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -364,12 +399,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rem\",\"description\":\"tempora\"}"
+                            "raw": "{\"name\":\"sed\",\"description\":\"qui\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 }
@@ -400,10 +432,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -419,7 +448,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83",
+                                    "value": "e15dc8ff-e0a9-423c-8088-4c6718b579f4",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -440,37 +469,37 @@
                             "formdata": [
                                 {
                                     "key": "first_name",
-                                    "value": "quas",
+                                    "value": "dolore",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "last_name",
-                                    "value": "nihil",
+                                    "value": "voluptas",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "email",
-                                    "value": "sed",
+                                    "value": "explicabo",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "password",
-                                    "value": "voluptatibus",
+                                    "value": "suscipit",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "group_id",
-                                    "value": "et",
+                                    "value": "omnis",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "is_super_admin",
-                                    "value": true,
+                                    "value": false,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -486,10 +515,7 @@
                                 }
                             ]
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -502,17 +528,17 @@
                             "query": [
                                 {
                                     "key": "id",
-                                    "value": "dolorem",
+                                    "value": "animi",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/v1\/user\/:id?id=dolorem",
+                            "raw": "{{baseUrl}}\/v1\/user\/:id?id=animi",
                             "variable": [
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83",
+                                    "value": "e15dc8ff-e0a9-423c-8088-4c6718b579f4",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -529,10 +555,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -548,7 +571,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9f85cc2b-45b6-4e1f-8c0f-4a2a6f297e83",
+                                    "value": "e15dc8ff-e0a9-423c-8088-4c6718b579f4",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -565,10 +588,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -597,37 +617,37 @@
                             "formdata": [
                                 {
                                     "key": "first_name",
-                                    "value": "provident",
+                                    "value": "deleniti",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "last_name",
-                                    "value": "et",
+                                    "value": "eum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "email",
-                                    "value": "esse",
+                                    "value": "perferendis",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "password",
-                                    "value": "est",
+                                    "value": "quis",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "group_id",
-                                    "value": "est",
+                                    "value": "qui",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "is_super_admin",
-                                    "value": false,
+                                    "value": true,
                                     "type": "text",
                                     "description": ""
                                 },
@@ -638,10 +658,7 @@
                                 }
                             ]
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 }

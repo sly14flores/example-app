@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
 use App\Http\Resources\UserResource;
@@ -21,7 +22,7 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth:api']);
+        $this->middleware(['auth:api'])->except(['store']);
     }
 
     /**
@@ -86,11 +87,18 @@ class UserController extends Controller
      * @bodyParam profile_picture file
      * @bodyParam group_id string required
      * @bodyParam is_super_admin boolean
+     * @bodyParam contacts object[]
+     * @bodyParam contacts.id string
+     * @bodyParam contacts.first_name string required
+     * @bodyParam contacts.last_name string required
+     * @bodyParam contacts.email string
+     * @bodyParam contacts.cp_no string
      * 
      * @unauthenticated
      */
     public function store(Request $request)
     {
+
         $validator = Validator::make($request->all(), $this->rules(true));
 
         if ($validator->fails()) {
@@ -98,23 +106,40 @@ class UserController extends Controller
         }
         
         $data = $validator->valid();
-        $data['is_super_admin'] = ($data['is_super_admin']=='true')?1:0;
+        $data['is_super_admin'] = (isset($data['is_super_admin']) && $data['is_super_admin']=='true')?1:0;
 
-        $record = new User;
-        $data['password'] = $password = Hash::make($data['password']);
-        $record->fill($data);
-        $record->save();
+        DB::beginTransaction();
 
-        // Upload profile_picture
-        if (isset($data['profile_picture'])) {
-            $folder = "uploads";
-            $filename = $request->file('profile_picture')->getClientOriginalName();
-            $request->file('profile_picture')->storeAs("public/$folder", $filename);
-            $record->profile_picture = "$folder/$filename";
+        try {
+
+            $record = new User;
+            $data['password'] = $password = Hash::make($data['password']);
+            $record->fill($data);
             $record->save();
+            
+            $this->userContacts($request->contacts,$record);
+    
+            // Upload profile_picture
+            if (isset($data['profile_picture'])) {
+                $this->uploadProfilePicture($request,$record);
+            }
+
+            DB::commit();
+
+            return $this->jsonSuccessResponse(null, 200, "User succesfully added");
+
+        } catch (\Exception $e) {
+
+            DB::rollback();
+
+            report($e);
+
+            return $this->jsonFailedResponse([
+                $e->getMessage()
+            ], 500, 'Something went wrong.');
+
         }
 
-        return $this->jsonSuccessResponse(null, 200, "User succesfully added");
     }
 
     /**
@@ -163,6 +188,12 @@ class UserController extends Controller
      * @bodyParam profile_picture file
      * @bodyParam group_id string required
      * @bodyParam is_super_admin boolean
+     * @bodyParam contacts object[]
+     * @bodyParam contacts.id string
+     * @bodyParam contacts.first_name string required
+     * @bodyParam contacts.last_name string required
+     * @bodyParam contacts.email string
+     * @bodyParam contacts.cp_no string
      * 
      * @authenticated
      */
@@ -179,23 +210,40 @@ class UserController extends Controller
         if ($validator->fails()) {
             return $this->jsonErrorDataValidation($validator->errors());
         }
-        
-        $data = $validator->valid();
-        $data['is_super_admin'] = ($data['is_super_admin']=='true')?1:0;
-        
-        $record->fill($data);
-        $record->save();
 
-        // Upload profile_picture
-        if (isset($data['profile_picture'])) {
-            $folder = "uploads";
-            $filename = $request->file('profile_picture')->getClientOriginalName();
-            $request->file('profile_picture')->storeAs("public/$folder", $filename);
-            $record->profile_picture = "$folder/$filename";
+        DB::beginTransaction();
+
+        try {
+
+            $data = $validator->valid();
+            $data['is_super_admin'] = (isset($data['is_super_admin']) && $data['is_super_admin']=='true')?1:0;
+            
+            $record->fill($data);
             $record->save();
+    
+            $this->userContacts($request->contacts,$record);
+    
+            // Upload profile_picture
+            if (isset($data['profile_picture'])) {
+                uploadProfilePicture($request,$record);
+            }
+
+            DB::commit();
+            
+            return $this->jsonSuccessResponse(null, 200, "User info succesfully updated");
+
+        } catch (\Exception $e) {
+
+            DB::rollback();
+
+            report($e);
+
+            return $this->jsonFailedResponse([
+                $e->getMessage()
+            ], 500, 'Something went wrong.');
+
         }
-        
-        return $this->jsonSuccessResponse(null, 200, "User info succesfully updated");
+
     }
 
     /**
@@ -218,5 +266,43 @@ class UserController extends Controller
         $record->delete();
         
         return $this->jsonDeleteSuccessResponse();
+    }
+
+    public function uploadProfilePicture($request,$record)
+    {
+        $folder = "uploads";
+        $filename = $request->file('profile_picture')->getClientOriginalName();
+        $request->file('profile_picture')->storeAs("public/$folder", $filename);
+        $record->profile_picture = "$folder/$filename";
+        $record->save();
+    }
+
+    public function userContacts($contacts,$record)
+    {
+
+        $rules = [
+            'id' => 'string|nullable',
+            'first_name' => 'string|required',
+            'last_name' => 'string|required',
+            'email' => 'string|nullable',
+            'cp_no' => 'string|nullable',
+        ];
+
+        foreach ($contacts as $contact) {
+
+            if ($contact['id']=='' || is_null($contact['id'])) {
+                $child = new Contact;
+            } else {
+                $child = Contact::find($contact['id']);
+            }
+
+            $validator = Validator::make($rule);
+            $data = $validator->valid();
+
+            $child->fill($data);
+            $record->contacts()->save($data);
+
+        }
+
     }
 }

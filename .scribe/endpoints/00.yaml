@@ -23,14 +23,14 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: sequi
+        example: quia
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: qui
+        example: excepturi
         type: string
         custom: []
     responses: []

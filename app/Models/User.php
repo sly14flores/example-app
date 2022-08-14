@@ -47,4 +47,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'is_super_admin' => 'boolean',
     ];
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
+    }
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }

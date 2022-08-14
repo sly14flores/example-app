@@ -39,11 +39,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: quia
+                  example: tempora
                 password:
                   type: string
                   description: ''
-                  example: excepturi
+                  example: odio
               required:
                 - email
                 - password
@@ -86,12 +86,12 @@ paths:
           in: query
           name: page
           description: ''
-          example: 18
+          example: 16
           required: false
           schema:
             type: integer
             description: ''
-            example: 18
+            example: 16
         -
           in: header
           name: Authorization
@@ -235,7 +235,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the contact.'
-        example: est
+        example: laborum
         required: true
         schema:
           type: string
@@ -345,11 +345,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: eveniet
+                  example: temporibus
                 description:
                   type: string
                   description: ''
-                  example: ea
+                  example: qui
               required:
                 - name
     get:
@@ -385,7 +385,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the group.'
-        example: enim
+        example: dolorem
         required: true
         schema:
           type: string
@@ -428,11 +428,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: accusamus
+                  example: minima
                 description:
                   type: string
                   description: ''
-                  example: maxime
+                  example: occaecati
               required:
                 - name
   /v1/users:
@@ -503,19 +503,19 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: assumenda
+                  example: libero
                 last_name:
                   type: string
                   description: ''
-                  example: quam
+                  example: repellendus
                 email:
                   type: string
                   description: ''
-                  example: expedita
+                  example: vitae
                 password:
                   type: string
                   description: ''
-                  example: ut
+                  example: laborum
                 profile_picture:
                   type: string
                   format: binary
@@ -523,11 +523,42 @@ paths:
                 group_id:
                   type: string
                   description: ''
-                  example: nisi
+                  example: voluptatem
                 is_super_admin:
                   type: boolean
                   description: ''
                   example: false
+                contacts:
+                  type: array
+                  description: ''
+                  example:
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        description: ''
+                        example: quos
+                      first_name:
+                        type: string
+                        description: ''
+                        example: veritatis
+                      last_name:
+                        type: string
+                        description: ''
+                        example: a
+                      email:
+                        type: string
+                        description: ''
+                        example: beatae
+                      cp_no:
+                        type: string
+                        description: ''
+                        example: ex
+                    required:
+                      - first_name
+                      - last_name
               required:
                 - first_name
                 - last_name
@@ -542,12 +573,12 @@ paths:
           in: query
           name: id
           description: ''
-          example: sed
+          example: voluptates
           required: true
           schema:
             type: string
             description: ''
-            example: sed
+            example: voluptates
         -
           in: header
           name: Authorization
@@ -641,19 +672,19 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: corporis
+                  example: numquam
                 last_name:
                   type: string
                   description: ''
-                  example: accusantium
+                  example: amet
                 email:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: tempora
                 password:
                   type: string
                   description: ''
-                  example: corporis
+                  example: alias
                 profile_picture:
                   type: string
                   format: binary
@@ -661,11 +692,11 @@ paths:
                 group_id:
                   type: string
                   description: ''
-                  example: fugit
+                  example: ut
                 is_super_admin:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 contacts:
                   type: array
                   description: ''
@@ -677,23 +708,23 @@ paths:
                       id:
                         type: string
                         description: ''
-                        example: deleniti
+                        example: sit
                       first_name:
                         type: string
                         description: ''
-                        example: neque
+                        example: sit
                       last_name:
                         type: string
                         description: ''
-                        example: omnis
+                        example: qui
                       email:
                         type: string
                         description: ''
-                        example: enim
+                        example: autem
                       cp_no:
                         type: string
                         description: ''
-                        example: ut
+                        example: ducimus
                     required:
                       - first_name
                       - last_name

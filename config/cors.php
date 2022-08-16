@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*','api.example.local','*.example.local'],
+    'allowed_origins' => ['*','example.local','api.example.local'],
 
     'allowed_origins_patterns' => [],
 

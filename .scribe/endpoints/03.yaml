@@ -38,7 +38,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 39356693-1b71-40f3-a650-9ead72c6139d
+        example: repudiandae
         type: string
         custom: []
     queryParameters: []
@@ -47,28 +47,28 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: libero
+        example: delectus
         type: string
         custom: []
       last_name:
         name: last_name
         description: ''
         required: true
-        example: repellendus
+        example: natus
         type: string
         custom: []
       email:
         name: email
         description: ''
         required: true
-        example: vitae
+        example: quia
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: laborum
+        example: qui
         type: string
         custom: []
       profile_picture:
@@ -82,14 +82,14 @@ endpoints:
         name: group_id
         description: ''
         required: true
-        example: voluptatem
+        example: aliquid
         type: string
         custom: []
       is_super_admin:
         name: is_super_admin
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         custom: []
       contacts:
@@ -104,35 +104,35 @@ endpoints:
         name: contacts.id
         description: ''
         required: false
-        example: quos
+        example: quam
         type: string
         custom: []
       contacts.first_name:
         name: contacts.first_name
         description: ''
         required: true
-        example: veritatis
+        example: quis
         type: string
         custom: []
       contacts.last_name:
         name: contacts.last_name
         description: ''
         required: true
-        example: a
+        example: quia
         type: string
         custom: []
       contacts.email:
         name: contacts.email
         description: ''
         required: false
-        example: beatae
+        example: aut
         type: string
         custom: []
       contacts.cp_no:
         name: contacts.cp_no
         description: ''
         required: false
-        example: ex
+        example: qui
         type: string
         custom: []
     responses: []
@@ -155,7 +155,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 39356693-1b71-40f3-a650-9ead72c6139d
+        example: dolor
         type: string
         custom: []
     queryParameters:
@@ -163,7 +163,7 @@ endpoints:
         name: id
         description: ''
         required: true
-        example: voluptates
+        example: labore
         type: string
         custom: []
     bodyParameters: []
@@ -187,7 +187,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 39356693-1b71-40f3-a650-9ead72c6139d
+        example: laboriosam
         type: string
         custom: []
     queryParameters: []
@@ -213,28 +213,28 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: numquam
+        example: aut
         type: string
         custom: []
       last_name:
         name: last_name
         description: ''
         required: true
-        example: amet
+        example: in
         type: string
         custom: []
       email:
         name: email
         description: ''
         required: true
-        example: tempora
+        example: laudantium
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: alias
+        example: vel
         type: string
         custom: []
       profile_picture:
@@ -248,7 +248,7 @@ endpoints:
         name: group_id
         description: ''
         required: true
-        example: ut
+        example: omnis
         type: string
         custom: []
       is_super_admin:
@@ -270,35 +270,35 @@ endpoints:
         name: contacts.id
         description: ''
         required: false
-        example: sit
+        example: omnis
         type: string
         custom: []
       contacts.first_name:
         name: contacts.first_name
         description: ''
         required: true
-        example: sit
+        example: suscipit
         type: string
         custom: []
       contacts.last_name:
         name: contacts.last_name
         description: ''
         required: true
-        example: qui
+        example: quis
         type: string
         custom: []
       contacts.email:
         name: contacts.email
         description: ''
         required: false
-        example: autem
+        example: cum
         type: string
         custom: []
       contacts.cp_no:
         name: contacts.cp_no
         description: ''
         required: false
-        example: ducimus
+        example: nulla
         type: string
         custom: []
     responses: []

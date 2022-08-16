@@ -22,7 +22,7 @@ endpoints:
         name: page
         description: ''
         required: false
-        example: 6
+        example: 12
         type: integer
         custom: []
     bodyParameters: []
@@ -46,7 +46,7 @@ endpoints:
         name: id
         description: 'The ID of the group.'
         required: true
-        example: dolorem
+        example: suscipit
         type: string
         custom: []
     queryParameters: []
@@ -72,7 +72,7 @@ endpoints:
         name: id
         description: 'The ID of the group.'
         required: true
-        example: error
+        example: quia
         type: string
         custom: []
     queryParameters: []
@@ -81,14 +81,14 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: temporibus
+        example: ducimus
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: false
-        example: qui
+        example: optio
         type: string
         custom: []
     responses: []
@@ -111,7 +111,7 @@ endpoints:
         name: id
         description: 'The ID of the group.'
         required: true
-        example: ea
+        example: recusandae
         type: string
         custom: []
     queryParameters: []
@@ -138,14 +138,14 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: minima
+        example: qui
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: false
-        example: occaecati
+        example: veritatis
         type: string
         custom: []
     responses: []

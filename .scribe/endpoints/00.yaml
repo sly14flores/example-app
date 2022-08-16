@@ -23,14 +23,14 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: tempora
+        example: explicabo
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: odio
+        example: nihil
         type: string
         custom: []
     responses: []

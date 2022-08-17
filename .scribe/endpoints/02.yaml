@@ -20,7 +20,7 @@ endpoints:
         name: page
         description: ''
         required: false
-        example: 12
+        example: 8
         type: integer
         custom: []
     bodyParameters: []
@@ -44,7 +44,7 @@ endpoints:
         name: id
         description: 'The ID of the group.'
         required: true
-        example: suscipit
+        example: et
         type: string
         custom: []
     queryParameters: []
@@ -70,7 +70,7 @@ endpoints:
         name: id
         description: 'The ID of the group.'
         required: true
-        example: quia
+        example: et
         type: string
         custom: []
     queryParameters: []
@@ -79,14 +79,14 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: ducimus
+        example: non
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: false
-        example: optio
+        example: natus
         type: string
         custom: []
     responses: []
@@ -109,7 +109,7 @@ endpoints:
         name: id
         description: 'The ID of the group.'
         required: true
-        example: recusandae
+        example: a
         type: string
         custom: []
     queryParameters: []
@@ -136,14 +136,14 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: qui
+        example: itaque
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: false
-        example: veritatis
+        example: ab
         type: string
         custom: []
     responses: []

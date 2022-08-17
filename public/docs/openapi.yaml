@@ -39,11 +39,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: explicabo
+                  example: incidunt
                 password:
                   type: string
                   description: ''
-                  example: nihil
+                  example: omnis
               required:
                 - email
                 - password
@@ -86,12 +86,12 @@ paths:
           in: query
           name: page
           description: ''
-          example: 18
+          example: 13
           required: false
           schema:
             type: integer
             description: ''
-            example: 18
+            example: 13
         -
           in: header
           name: Authorization
@@ -235,7 +235,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the contact.'
-        example: aut
+        example: et
         required: true
         schema:
           type: string
@@ -248,12 +248,12 @@ paths:
           in: query
           name: page
           description: ''
-          example: 12
+          example: 8
           required: false
           schema:
             type: integer
             description: ''
-            example: 12
+            example: 8
         -
           in: header
           name: Authorization
@@ -345,11 +345,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: ducimus
+                  example: non
                 description:
                   type: string
                   description: ''
-                  example: optio
+                  example: natus
               required:
                 - name
     get:
@@ -385,7 +385,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the group.'
-        example: suscipit
+        example: et
         required: true
         schema:
           type: string
@@ -428,11 +428,11 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: qui
+                  example: itaque
                 description:
                   type: string
                   description: ''
-                  example: veritatis
+                  example: ab
               required:
                 - name
   /v1/users:
@@ -503,19 +503,19 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: delectus
+                  example: rerum
                 last_name:
                   type: string
                   description: ''
-                  example: natus
+                  example: cumque
                 email:
                   type: string
                   description: ''
-                  example: quia
+                  example: qui
                 password:
                   type: string
                   description: ''
-                  example: qui
+                  example: eum
                 profile_picture:
                   type: string
                   format: binary
@@ -523,7 +523,7 @@ paths:
                 group_id:
                   type: string
                   description: ''
-                  example: aliquid
+                  example: impedit
                 is_super_admin:
                   type: boolean
                   description: ''
@@ -539,15 +539,15 @@ paths:
                       id:
                         type: string
                         description: ''
-                        example: quam
+                        example: consequatur
                       first_name:
                         type: string
                         description: ''
-                        example: quis
+                        example: asperiores
                       last_name:
                         type: string
                         description: ''
-                        example: quia
+                        example: temporibus
                       email:
                         type: string
                         description: ''
@@ -555,7 +555,7 @@ paths:
                       cp_no:
                         type: string
                         description: ''
-                        example: qui
+                        example: ipsa
                     required:
                       - first_name
                       - last_name
@@ -573,12 +573,12 @@ paths:
           in: query
           name: id
           description: ''
-          example: labore
+          example: sint
           required: true
           schema:
             type: string
             description: ''
-            example: labore
+            example: sint
         -
           in: header
           name: Authorization
@@ -636,7 +636,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: repudiandae
+        example: 7e748b30-7c00-4034-9519-3d324c5a3694
         required: true
         schema:
           type: string
@@ -672,19 +672,19 @@ paths:
                 first_name:
                   type: string
                   description: ''
-                  example: aut
+                  example: et
                 last_name:
                   type: string
                   description: ''
-                  example: in
+                  example: qui
                 email:
                   type: string
                   description: ''
-                  example: laudantium
+                  example: culpa
                 password:
                   type: string
                   description: ''
-                  example: vel
+                  example: amet
                 profile_picture:
                   type: string
                   format: binary
@@ -692,7 +692,7 @@ paths:
                 group_id:
                   type: string
                   description: ''
-                  example: omnis
+                  example: perspiciatis
                 is_super_admin:
                   type: boolean
                   description: ''
@@ -708,23 +708,23 @@ paths:
                       id:
                         type: string
                         description: ''
-                        example: omnis
+                        example: alias
                       first_name:
                         type: string
                         description: ''
-                        example: suscipit
+                        example: saepe
                       last_name:
                         type: string
                         description: ''
-                        example: quis
+                        example: vitae
                       email:
                         type: string
                         description: ''
-                        example: cum
+                        example: voluptatum
                       cp_no:
                         type: string
                         description: ''
-                        example: nulla
+                        example: magnam
                     required:
                       - first_name
                       - last_name

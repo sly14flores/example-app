@@ -117,7 +117,7 @@ class UserController extends Controller
             $record->fill($data);
             $record->save();
             
-            $this->userContacts($request->contacts,$record);
+            // $this->userContacts($request->contacts,$record);
     
             // Upload profile_picture
             if (isset($data['profile_picture'])) {

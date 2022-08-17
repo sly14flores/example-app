@@ -20,7 +20,7 @@ endpoints:
         name: page
         description: ''
         required: false
-        example: 18
+        example: 5
         type: integer
         custom: []
     bodyParameters: []
@@ -69,7 +69,7 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: aut
+        example: iste
         type: string
         custom: []
     queryParameters: []
@@ -103,7 +103,7 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: sint
+        example: hic
         type: string
         custom: []
     queryParameters: []
@@ -128,7 +128,7 @@ endpoints:
         name: id
         description: 'The ID of the contact.'
         required: true
-        example: assumenda
+        example: eligendi
         type: string
         custom: []
     queryParameters: []

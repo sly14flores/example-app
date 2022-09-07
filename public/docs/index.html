@@ -175,7 +175,7 @@ bodyParam cp_no string</a>
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
         <ul class="toc-footer" id="last-updated">
-        <li>Last updated: August 17 2022</li>
+        <li>Last updated: September 7 2022</li>
     </ul>
 </div>
 
@@ -219,8 +219,8 @@ Login using email and password</h2>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"aut\",
-    \"password\": \"est\"
+    \"email\": \"deleniti\",
+    \"password\": \"numquam\"
 }"
 </code></pre></div>
 
@@ -236,8 +236,8 @@ const headers = {
 };
 
 let body = {
-    "email": "aut",
-    "password": "est"
+    "email": "deleniti",
+    "password": "numquam"
 };
 
 fetch(url, {
@@ -295,7 +295,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTv1-auth-login"
-               value="aut"
+               value="deleniti"
                data-component="body" hidden>
     <br>
 
@@ -305,7 +305,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTv1-auth-login"
-               value="est"
+               value="numquam"
                data-component="body" hidden>
     <br>
 
@@ -421,7 +421,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/contacts?page=5" \
+    --get "http://api.example.local/v1/contacts?page=3" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -433,7 +433,7 @@ fetch(url, {
 );
 
 const params = {
-    "page": "5",
+    "page": "3",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -506,7 +506,7 @@ fetch(url, {
                 <input type="number"
                name="page"
                data-endpoint="GETv1-contacts"
-               value="5"
+               value="3"
                data-component="query" hidden>
     <br>
 
@@ -622,7 +622,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/contact/iste" \
+    --get "http://api.example.local/v1/contact/possimus" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -630,7 +630,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/contact/iste"
+    "http://api.example.local/v1/contact/possimus"
 );
 
 const headers = {
@@ -701,7 +701,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="GETv1-contact--id-"
-               value="iste"
+               value="possimus"
                data-component="url" hidden>
     <br>
 <p>The ID of the contact.</p>
@@ -729,7 +729,7 @@ bodyParam cp_no string</h2>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.example.local/v1/contact/hic" \
+    "http://api.example.local/v1/contact/reiciendis" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -737,7 +737,7 @@ bodyParam cp_no string</h2>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/contact/hic"
+    "http://api.example.local/v1/contact/reiciendis"
 );
 
 const headers = {
@@ -812,7 +812,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="PUTv1-contact--id-"
-               value="hic"
+               value="reiciendis"
                data-component="url" hidden>
     <br>
 <p>The ID of the contact.</p>
@@ -833,7 +833,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.example.local/v1/contact/eligendi" \
+    "http://api.example.local/v1/contact/sed" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -841,7 +841,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/contact/eligendi"
+    "http://api.example.local/v1/contact/sed"
 );
 
 const headers = {
@@ -912,7 +912,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="DELETEv1-contact--id-"
-               value="eligendi"
+               value="sed"
                data-component="url" hidden>
     <br>
 <p>The ID of the contact.</p>
@@ -937,7 +937,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/groups?page=9" \
+    --get "http://api.example.local/v1/groups?page=11" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -949,7 +949,7 @@ fetch(url, {
 );
 
 const params = {
-    "page": "9",
+    "page": "11",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -1022,7 +1022,7 @@ fetch(url, {
                 <input type="number"
                name="page"
                data-endpoint="GETv1-groups"
-               value="9"
+               value="11"
                data-component="query" hidden>
     <br>
 
@@ -1043,7 +1043,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.example.local/v1/group/sit" \
+    "http://api.example.local/v1/group/vel" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1051,7 +1051,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/group/sit"
+    "http://api.example.local/v1/group/vel"
 );
 
 const headers = {
@@ -1122,7 +1122,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="DELETEv1-group--id-"
-               value="sit"
+               value="vel"
                data-component="url" hidden>
     <br>
 <p>The ID of the group.</p>
@@ -1143,20 +1143,20 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.example.local/v1/group/cupiditate" \
+    "http://api.example.local/v1/group/omnis" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ab\",
-    \"description\": \"consequatur\"
+    \"name\": \"est\",
+    \"description\": \"vero\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/group/cupiditate"
+    "http://api.example.local/v1/group/omnis"
 );
 
 const headers = {
@@ -1166,8 +1166,8 @@ const headers = {
 };
 
 let body = {
-    "name": "ab",
-    "description": "consequatur"
+    "name": "est",
+    "description": "vero"
 };
 
 fetch(url, {
@@ -1237,7 +1237,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="PUTv1-group--id-"
-               value="cupiditate"
+               value="omnis"
                data-component="url" hidden>
     <br>
 <p>The ID of the group.</p>
@@ -1248,7 +1248,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="PUTv1-group--id-"
-               value="ab"
+               value="est"
                data-component="body" hidden>
     <br>
 
@@ -1258,7 +1258,7 @@ fetch(url, {
                 <input type="text"
                name="description"
                data-endpoint="PUTv1-group--id-"
-               value="consequatur"
+               value="vero"
                data-component="body" hidden>
     <br>
 
@@ -1279,7 +1279,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/group/accusamus" \
+    --get "http://api.example.local/v1/group/consequatur" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1287,7 +1287,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/group/accusamus"
+    "http://api.example.local/v1/group/consequatur"
 );
 
 const headers = {
@@ -1358,7 +1358,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="GETv1-group--id-"
-               value="accusamus"
+               value="consequatur"
                data-component="url" hidden>
     <br>
 <p>The ID of the group.</p>
@@ -1384,8 +1384,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ea\",
-    \"description\": \"a\"
+    \"name\": \"ut\",
+    \"description\": \"ullam\"
 }"
 </code></pre></div>
 
@@ -1402,8 +1402,8 @@ const headers = {
 };
 
 let body = {
-    "name": "ea",
-    "description": "a"
+    "name": "ut",
+    "description": "ullam"
 };
 
 fetch(url, {
@@ -1469,7 +1469,7 @@ fetch(url, {
                 <input type="text"
                name="name"
                data-endpoint="POSTv1-group"
-               value="ea"
+               value="ut"
                data-component="body" hidden>
     <br>
 
@@ -1479,7 +1479,7 @@ fetch(url, {
                 <input type="text"
                name="description"
                data-endpoint="POSTv1-group"
-               value="a"
+               value="ullam"
                data-component="body" hidden>
     <br>
 
@@ -1593,22 +1593,22 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://api.example.local/v1/user/non" \
+    "http://api.example.local/v1/user/7e748b30-7c00-4034-9519-3d324c5a3694" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "first_name=aut" \
-    --form "last_name=ipsum" \
-    --form "email=expedita" \
-    --form "password=sequi" \
-    --form "group_id=nobis" \
-    --form "is_super_admin=1" \
-    --form "profile_picture=@C:\Users\admin\AppData\Local\Temp\php4F41.tmp" </code></pre></div>
+    --form "first_name=cumque" \
+    --form "last_name=deserunt" \
+    --form "email=delectus" \
+    --form "password=mollitia" \
+    --form "group_id=et" \
+    --form "is_super_admin=" \
+    --form "profile_picture=@C:\Users\LENOVO\AppData\Local\Temp\php86B9.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/user/non"
+    "http://api.example.local/v1/user/7e748b30-7c00-4034-9519-3d324c5a3694"
 );
 
 const headers = {
@@ -1618,12 +1618,12 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('first_name', 'aut');
-body.append('last_name', 'ipsum');
-body.append('email', 'expedita');
-body.append('password', 'sequi');
-body.append('group_id', 'nobis');
-body.append('is_super_admin', '1');
+body.append('first_name', 'cumque');
+body.append('last_name', 'deserunt');
+body.append('email', 'delectus');
+body.append('password', 'mollitia');
+body.append('group_id', 'et');
+body.append('is_super_admin', '');
 body.append('profile_picture', document.querySelector('input[name="profile_picture"]').files[0]);
 
 fetch(url, {
@@ -1693,7 +1693,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="PUTv1-user--id-"
-               value="non"
+               value="7e748b30-7c00-4034-9519-3d324c5a3694"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
@@ -1704,7 +1704,7 @@ fetch(url, {
                 <input type="text"
                name="first_name"
                data-endpoint="PUTv1-user--id-"
-               value="aut"
+               value="cumque"
                data-component="body" hidden>
     <br>
 
@@ -1714,7 +1714,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="PUTv1-user--id-"
-               value="ipsum"
+               value="deserunt"
                data-component="body" hidden>
     <br>
 
@@ -1724,7 +1724,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="PUTv1-user--id-"
-               value="expedita"
+               value="delectus"
                data-component="body" hidden>
     <br>
 
@@ -1734,7 +1734,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="PUTv1-user--id-"
-               value="sequi"
+               value="mollitia"
                data-component="body" hidden>
     <br>
 
@@ -1754,7 +1754,7 @@ fetch(url, {
                 <input type="text"
                name="group_id"
                data-endpoint="PUTv1-user--id-"
-               value="nobis"
+               value="et"
                data-component="body" hidden>
     <br>
 
@@ -1792,7 +1792,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.id"
                data-endpoint="PUTv1-user--id-"
-               value="enim"
+               value="quaerat"
                data-component="body" hidden>
     <br>
 
@@ -1802,7 +1802,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.first_name"
                data-endpoint="PUTv1-user--id-"
-               value="sit"
+               value="cupiditate"
                data-component="body" hidden>
     <br>
 
@@ -1812,7 +1812,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.last_name"
                data-endpoint="PUTv1-user--id-"
-               value="temporibus"
+               value="sed"
                data-component="body" hidden>
     <br>
 
@@ -1822,7 +1822,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.email"
                data-endpoint="PUTv1-user--id-"
-               value="et"
+               value="magni"
                data-component="body" hidden>
     <br>
 
@@ -1832,7 +1832,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.cp_no"
                data-endpoint="PUTv1-user--id-"
-               value="aut"
+               value="animi"
                data-component="body" hidden>
     <br>
 
@@ -1855,7 +1855,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://api.example.local/v1/user/sint?id=consequatur" \
+    --get "http://api.example.local/v1/user/7e748b30-7c00-4034-9519-3d324c5a3694?id=quod" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1863,11 +1863,11 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/user/sint"
+    "http://api.example.local/v1/user/7e748b30-7c00-4034-9519-3d324c5a3694"
 );
 
 const params = {
-    "id": "consequatur",
+    "id": "quod",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -1940,7 +1940,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="GETv1-user--id-"
-               value="sint"
+               value="7e748b30-7c00-4034-9519-3d324c5a3694"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
@@ -1951,7 +1951,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="GETv1-user--id-"
-               value="consequatur"
+               value="quod"
                data-component="query" hidden>
     <br>
 
@@ -1972,7 +1972,7 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://api.example.local/v1/user/omnis" \
+    "http://api.example.local/v1/user/7e748b30-7c00-4034-9519-3d324c5a3694" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -1980,7 +1980,7 @@ fetch(url, {
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://api.example.local/v1/user/omnis"
+    "http://api.example.local/v1/user/7e748b30-7c00-4034-9519-3d324c5a3694"
 );
 
 const headers = {
@@ -2051,7 +2051,7 @@ fetch(url, {
                 <input type="text"
                name="id"
                data-endpoint="DELETEv1-user--id-"
-               value="omnis"
+               value="7e748b30-7c00-4034-9519-3d324c5a3694"
                data-component="url" hidden>
     <br>
 <p>The ID of the user.</p>
@@ -2074,13 +2074,13 @@ fetch(url, {
     "http://api.example.local/v1/user" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "first_name=ut" \
-    --form "last_name=voluptatem" \
-    --form "email=asperiores" \
-    --form "password=et" \
-    --form "group_id=illum" \
-    --form "is_super_admin=" \
-    --form "profile_picture=@C:\Users\admin\AppData\Local\Temp\php4EF2.tmp" </code></pre></div>
+    --form "first_name=rerum" \
+    --form "last_name=corrupti" \
+    --form "email=assumenda" \
+    --form "password=iste" \
+    --form "group_id=et" \
+    --form "is_super_admin=1" \
+    --form "profile_picture=@C:\Users\LENOVO\AppData\Local\Temp\php865B.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2094,12 +2094,12 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('first_name', 'ut');
-body.append('last_name', 'voluptatem');
-body.append('email', 'asperiores');
-body.append('password', 'et');
-body.append('group_id', 'illum');
-body.append('is_super_admin', '');
+body.append('first_name', 'rerum');
+body.append('last_name', 'corrupti');
+body.append('email', 'assumenda');
+body.append('password', 'iste');
+body.append('group_id', 'et');
+body.append('is_super_admin', '1');
 body.append('profile_picture', document.querySelector('input[name="profile_picture"]').files[0]);
 
 fetch(url, {
@@ -2157,7 +2157,7 @@ fetch(url, {
                 <input type="text"
                name="first_name"
                data-endpoint="POSTv1-user"
-               value="ut"
+               value="rerum"
                data-component="body" hidden>
     <br>
 
@@ -2167,7 +2167,7 @@ fetch(url, {
                 <input type="text"
                name="last_name"
                data-endpoint="POSTv1-user"
-               value="voluptatem"
+               value="corrupti"
                data-component="body" hidden>
     <br>
 
@@ -2177,7 +2177,7 @@ fetch(url, {
                 <input type="text"
                name="email"
                data-endpoint="POSTv1-user"
-               value="asperiores"
+               value="assumenda"
                data-component="body" hidden>
     <br>
 
@@ -2187,7 +2187,7 @@ fetch(url, {
                 <input type="text"
                name="password"
                data-endpoint="POSTv1-user"
-               value="et"
+               value="iste"
                data-component="body" hidden>
     <br>
 
@@ -2207,7 +2207,7 @@ fetch(url, {
                 <input type="text"
                name="group_id"
                data-endpoint="POSTv1-user"
-               value="illum"
+               value="et"
                data-component="body" hidden>
     <br>
 
@@ -2245,7 +2245,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.id"
                data-endpoint="POSTv1-user"
-               value="non"
+               value="et"
                data-component="body" hidden>
     <br>
 
@@ -2255,7 +2255,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.first_name"
                data-endpoint="POSTv1-user"
-               value="perspiciatis"
+               value="quis"
                data-component="body" hidden>
     <br>
 
@@ -2265,7 +2265,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.last_name"
                data-endpoint="POSTv1-user"
-               value="minus"
+               value="laudantium"
                data-component="body" hidden>
     <br>
 
@@ -2275,7 +2275,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.email"
                data-endpoint="POSTv1-user"
-               value="ut"
+               value="delectus"
                data-component="body" hidden>
     <br>
 
@@ -2285,7 +2285,7 @@ fetch(url, {
                 <input type="text"
                name="contacts.cp_no"
                data-endpoint="POSTv1-user"
-               value="pariatur"
+               value="eos"
                data-component="body" hidden>
     <br>
 

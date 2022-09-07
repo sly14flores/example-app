@@ -25,14 +25,14 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: aut
+        example: deleniti
         type: string
         custom: []
       password:
         name: password
         description: ''
         required: true
-        example: est
+        example: numquam
         type: string
         custom: []
     responses: []
